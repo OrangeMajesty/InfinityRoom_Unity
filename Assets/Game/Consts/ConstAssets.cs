@@ -2,7 +2,7 @@
 
 namespace Game.Consts
 {
-    [CreateAssetMenu(menuName = "Consts/Create")]
+    [CreateAssetMenu(menuName = "Create game consts")]
     public partial class ConstAssets: ScriptableObject
     {
         public Game _game;

@@ -1,9 +1,12 @@
-﻿using UnityEngine;
-
-namespace Game.Models
+﻿namespace Game.Models
 {
-    public class Modeler: MonoBehaviour
+    public static class Modeler
     {
-        
+        public static ModelGame ModelGame { get; private set; }
+
+        public static void Init()
+        {
+            ModelGame = new ModelGame();
+        }
     }
 }

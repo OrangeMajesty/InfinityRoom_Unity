@@ -11,5 +11,10 @@ namespace Game.Consts
         public static ConstAssets.Game Game => _assets._game;
 
         private static ConstAssets _assets;
+
+        public void Init()
+        {
+            
+        }
     }
 }
