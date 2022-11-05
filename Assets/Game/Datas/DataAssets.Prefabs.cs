@@ -11,10 +11,10 @@ namespace Game.Datas
             [Header("Игровые объекты")]
             [Tooltip("Мяч")]
             public GameObject ball;
-            [Tooltip("Стена")]
-            public GameObject wall;
-            [Tooltip("Препятствие")]
-            public GameObject border;
+            // [Tooltip("Стена")]
+            // public GameObject wall;
+            // [Tooltip("Препятствие")]
+            // public GameObject border;
             
         }
     }

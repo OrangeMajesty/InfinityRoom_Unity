@@ -6,7 +6,7 @@ namespace Game.ECSSystems
     {
         public void Run()
         {
-            throw new System.NotImplementedException();
+            // throw new System.NotImplementedException();
         }
     }
 }
