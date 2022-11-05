@@ -9,8 +9,8 @@ namespace Game.Consts
         public class Game
         {
             [Header("Настройка уровня")]
-            [Tooltip("Отдаленность границ комнаты от середины экрана")]
-            public Vector2 yWallDistance;
+            [Tooltip("Отдаленность стен от середины сцены")]
+            public Vector2 wallDistance;
             [Tooltip("Спавн преграды каждые n клеток (1 клетка = 1 unit)")]
             public int distanceBorderSpawn;
             [Tooltip("Скорость мяча по оси x")]

@@ -39,9 +39,9 @@ namespace Game.Pools
         {
             for (int i = 0; i < _objects[type].Count; i++)
             {
-                if (!_objects[type][i].enabled)
+                if (!_objects[type][i].isActiveAndEnabled)
                 {
-                    _objects[type][i].enabled = true;
+                    _objects[type][i].gameObject.SetActive(true);
                     return _objects[type][i];
                 }
             }

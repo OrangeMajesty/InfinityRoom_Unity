@@ -1,14 +1,16 @@
-﻿using UnityEngine;
+﻿using Game.Pools;
 
 namespace Game.ECSComponents
 {
-    public struct WallBallCmd
+    public struct WallSpawnCmd
     {
         public float x, y;
     }
 
+    public struct WallDestroyedEvent {};
+
     public struct WallTag
     {
-        public GameObject ball;
+        public PoolObject wall;
     }
 }

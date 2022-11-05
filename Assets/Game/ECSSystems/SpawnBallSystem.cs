@@ -8,6 +8,9 @@ namespace Game.ECSSystems
 {
     public class SpawnBallSystem: IEcsInitSystem
     {
+        public const string Name = "SpawnBallSystem";
+        //-------------------------------------------
+        
         private EcsFilter<SpawnBallCmd> _spawnBallCmd;
         
         public void Init()
