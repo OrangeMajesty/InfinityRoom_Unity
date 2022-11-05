@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
 
 namespace Game.Models
 {
-    public class ModelPrefs: ScriptableObject
+    [Serializable]
+    public class ModelPrefs
     {
-        
+        public float maxTimePlayed;
     }
 }

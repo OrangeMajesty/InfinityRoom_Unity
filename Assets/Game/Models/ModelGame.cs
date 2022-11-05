@@ -1,5 +1,4 @@
 ﻿using System;
-using UnityEngine;
 
 namespace Game.Models
 {
@@ -7,5 +6,6 @@ namespace Game.Models
     public class ModelGame
     {
         public int score;
+        public float playingTime;
     }
 }
