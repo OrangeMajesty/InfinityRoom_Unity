@@ -14,8 +14,15 @@ namespace Game.UI
         private TextMeshProUGUI _text;
         private void FixedUpdate()
         {
-            float sec = Mathf.Round(Modeler.ModelGame.playingTime);
-            _text.text = $"Время игры: {sec} сек";
+            if (Modeler.ModelGame.playingTime > 0.1f)
+            {
+                float sec = Mathf.Round(Modeler.ModelGame.playingTime);
+                _text.text = $"Время игры: {sec} сек";
+            }
+            else
+            {
+                _text.text = "";
+            }
         }
     }
 }

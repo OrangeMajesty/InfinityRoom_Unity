@@ -16,6 +16,8 @@ namespace Game.UI
         private TextMeshProUGUI _maxPlayingTime;
         [SerializeField]
         private TextMeshProUGUI _playerPlayingTime;
+        [SerializeField]
+        private TextMeshProUGUI _gameCountTime;
 
         protected override void Showed()
         {
@@ -23,6 +25,7 @@ namespace Game.UI
             
             _maxPlayingTime.text = $"Макс. рекорд: {Mathf.Round(Modeler.ModelPrefs.maxTimePlayed)} сек";
             _playerPlayingTime.text = $"Ваш. рекорд: {Mathf.Round(Modeler.ModelGame.playingTime)} сек";
+            _gameCountTime.text = $"Попыток: {(int)Modeler.ModelPrefs.gameCount}";
         }
 
         protected void OnGameRestartClick()
