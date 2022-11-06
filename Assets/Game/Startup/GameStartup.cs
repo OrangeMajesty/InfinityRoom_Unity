@@ -18,21 +18,24 @@ namespace Game.Startup
         private EcsStartup _ecsStartup;
         [SerializeField]
         private UIStartup _uiStartup;
-        
-        private void Start()
-        {
-            _uiStartup.Init();
-            _worldStartup.Init();
-            _pools.Init();
-            _const.Init();
-            Modeler.Init();
 
-            _ecsStartup.Init();
+        private static GameStartup _instance;
+        
+        private void Awake()
+        {
+            _instance = this;
+            GameRestart();
         }
 
-        private void GameRestart()
+        public static void GameRestart()
         {
-            // Modeler.Save();
+            _instance._uiStartup.Init();
+            _instance._worldStartup.Init();
+            _instance._pools.Init();
+            _instance._const.Init();
+            Modeler.Init();
+
+            _instance._ecsStartup.Init();
         }
     }
 }

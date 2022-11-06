@@ -11,7 +11,11 @@ namespace Game.Startup
         
         [SerializeField]
         private UICountDownPanel _countdownPanel;
-        public static UICountDownPanel UICountDownPanel => _instance._countdownPanel;
+        public static UICountDownPanel UICountDownPanel => _instance._countdownPanel;        
+        
+        [SerializeField]
+        private UIStartGamePanel _startPanel;
+        public static UIStartGamePanel UIStartGamePanel => _instance._startPanel;
         
         private static UIStartup _instance;
 
@@ -24,6 +28,7 @@ namespace Game.Startup
         {
             LosePopup.Hide();
             UICountDownPanel.Hide();
+            UIStartGamePanel.Hide();
         }
     }
 }

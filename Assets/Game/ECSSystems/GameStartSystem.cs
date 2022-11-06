@@ -1,4 +1,5 @@
-﻿using Game.ECSComponents;
+﻿using Game.Consts;
+using Game.ECSComponents;
 using Game.Models;
 using Game.Pools;
 using Game.Startup;
@@ -8,18 +9,13 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
-    public class GameStartSystem: IEcsInitSystem, IEcsRunSystem
+    public class GameStartSystem: IEcsRunSystem
     {
         public const string Name = "GameStartSystem";
         //-------------------------------------------
 
         private EcsFilter<GameStartCmd> _gameStartCmd;
         private EcsFilter<GameStartCountDownCmd> _gameStartCountdownCmd;
-        
-        public void Init()
-        {
-            EcsUtil.Get<GameStartCountDownCmd>();
-        }
         
         public void Run()
         {
