@@ -1,21 +1,25 @@
-﻿using Game.Datas;
-using Game.ECSComponents;
+﻿using Game.ECSComponents;
+using Game.Pools;
 using Game.Startup;
+using Game.Types;
 using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Game.ECSSystems
 {
-    public class SpawnBallSystem: IEcsInitSystem
+    public class SpawnBallSystem: IEcsRunSystem
     {
         public const string Name = "SpawnBallSystem";
         //-------------------------------------------
         
         private EcsFilter<SpawnBallCmd> _spawnBallCmd;
         
-        public void Init()
+        public void Run()
         {
-            GameObject ball = Object.Instantiate(Data.Prefabs.ball, Vector3.zero, Quaternion.identity);
+            if (_spawnBallCmd.IsEmpty())
+                return;
+            
+            GameObject ball = PoolsObjects.instance.GetObject(PoolObjectType.Ball).gameObject;
             EcsEntity ballSpawnedEvent = EcsStartup.World.NewEntity();
             ballSpawnedEvent.Get<BallSpawnedEvent>();
             ballSpawnedEvent.Get<BallTag>().ball = ball;

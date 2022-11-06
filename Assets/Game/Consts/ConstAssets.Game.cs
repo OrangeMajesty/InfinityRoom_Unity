@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Consts
 {
@@ -18,6 +17,11 @@ namespace Game.Consts
             public float ballSpeedY;
             [Tooltip("Начальная скорость мяча по оси X")]
             public float ballSpeedX;
+            
+            [Tooltip("Ускорение мяча каждые n секунд")]
+            public float accelerationAfterNSec;
+            [Tooltip("Сила ускорение мяча")]
+            public float accelerationBall;
         }
     }
 }

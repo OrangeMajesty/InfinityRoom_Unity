@@ -25,6 +25,12 @@ namespace Game.ECSSystems
         
         public void Run()
         {
+            if (_gamePlayingTag.IsEmpty())
+            {
+                _lastSpawnPositionX = 0f;
+                return;
+            }
+
             // Пропускаем генерацию если уже сгенерирован 1 блок на дистанции
             if ((-_worldTransform.position.x + Const.Game.wallDistance.x) - _lastSpawnPositionX < 1)
                 return;

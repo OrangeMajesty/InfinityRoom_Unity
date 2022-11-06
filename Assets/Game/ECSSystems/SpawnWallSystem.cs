@@ -8,31 +8,32 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
-    public class SpawnWallSystem: IEcsInitSystem, IEcsRunSystem
+    public class SpawnWallSystem: IEcsRunSystem
     {
         public const string Name = "SpawnWallSystem";
         //-------------------------------------------
 
         private EcsFilter<WallSpawnCmd> _wallSpawnCmd;
+        private EcsFilter<GameStartEvent> _gameStartEvent;
         private EcsFilter<WallDestroyedEvent> _wallDestroyedEvent;
         
         // Target spawn wall coordinate
         private float x, y;
-        
-        public void Init()
-        {
-            x = -Consts.Const.Game.wallDistance.x;
-            y = Consts.Const.Game.wallDistance.y;
-            
-            // Цикл до конца карты
-            while (x < Consts.Const.Game.wallDistance.x)
-            {
-                CreateWall();
-            }
-        }
-        
+
         public void Run()
         {
+            if (!_gameStartEvent.IsEmpty())
+            {
+                x = -Consts.Const.Game.wallDistance.x;
+                y = Consts.Const.Game.wallDistance.y;
+            
+                // Цикл до конца карты
+                while (x < Consts.Const.Game.wallDistance.x)
+                {
+                    CreateWall();
+                }
+            }
+
             foreach (var cmd in _wallSpawnCmd)
             {
                 ref var spawnComponent = ref _wallSpawnCmd.Get1(cmd);

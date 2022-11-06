@@ -17,3 +17,5 @@ MonoBehaviour:
     distanceBorderSpawn: 5
     ballSpeedY: 5
     ballSpeedX: 5
+    accelerationAfterNSec: 15
+    accelerationBall: 2

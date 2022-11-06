@@ -7,5 +7,6 @@ namespace Game.Pools
     {
         public PoolObject prefab;
         public int count;
+        public bool withoutParent;
     }
 }

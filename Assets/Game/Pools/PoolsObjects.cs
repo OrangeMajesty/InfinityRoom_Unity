@@ -34,7 +34,8 @@ namespace Game.Pools
                 _objects.Add((PoolObjectType) i, new List<PoolObject>(_prefabs[i].count));
                 for (int o = 0; o < _prefabs[i].count; o++)
                 {
-                    PoolObject poolObject = Instantiate(_prefabs[i].prefab, rootTransform);
+                    var parent = _prefabs[i].withoutParent ? null : rootTransform;
+                    PoolObject poolObject = Instantiate(_prefabs[i].prefab, parent);
                     poolObject.gameObject.SetActive(false);
                     
                     _objects[(PoolObjectType) i].Add(poolObject);
@@ -53,9 +54,22 @@ namespace Game.Pools
                 }
             }
             
-            PoolObject poolObject = Instantiate(_prefabs[(int) type].prefab, rootTransform);
+            var parent = _prefabs[(int) type].withoutParent ? null : rootTransform;
+            PoolObject poolObject = Instantiate(_prefabs[(int) type].prefab, parent);
             _objects[type].Add(poolObject);
             return poolObject;
+        }
+
+        public void ReleaseAllObjects()
+        {
+            foreach (var pollObjects in _objects.Values)
+            {
+                foreach (var poolObject in pollObjects)
+                {
+                    poolObject.transform.position = Vector3.zero;
+                    poolObject.ReturnToPool();
+                }
+            }
         }
 
         public void ReleaseObject(PoolObject poolObject)

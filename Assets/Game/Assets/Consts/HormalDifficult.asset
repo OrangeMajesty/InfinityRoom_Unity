@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _game:
     wallDistance: {x: 13, y: 4}
-    distanceBorderSpawn: 0
+    distanceBorderSpawn: 4
     ballSpeedY: 6
     ballSpeedX: 7
+    accelerationAfterNSec: 15
+    accelerationBall: 3
