@@ -1,4 +1,5 @@
-﻿using Game.ECSSystems;
+﻿using Game.ECSComponents;
+using Game.ECSSystems;
 using Leopotam.Ecs;
 using UnityEngine;
 
@@ -15,12 +16,15 @@ namespace Game.Startup
             Systems = new EcsSystems(World);
             Systems
                 .Add(new SpawnBallSystem())
+                .Add(new GameStartSystem())
                 .Add(new GameLoseSystem(), GameLoseSystem.Name)
+                .Add(new PlayingTimeSystem(), PlayingTimeSystem.Name)
                 .Add(new BallMoveSystem(), BallMoveSystem.Name)
                 .Add(new WorldMoveSystem(), WorldMoveSystem.Name)
                 .Add(new DisableObjectOutOfBounds(), DisableObjectOutOfBounds.Name)
                 .Add(new SpawnWallSystem(), SpawnWallSystem.Name)
                 .Add(new SpawnBordersSystems(), SpawnBordersSystems.Name)
+                .OneFrame<GameStartEvent>()
                 .Init();
         }
         

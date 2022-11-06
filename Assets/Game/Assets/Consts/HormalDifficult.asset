@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c530bf68d04d85a70ccbeec66f5382, type: 3}
   m_Name: HormalDifficult
   m_EditorClassIdentifier: 
+  _game:
+    wallDistance: {x: 13, y: 4}
+    distanceBorderSpawn: 0
+    ballSpeedY: 6
+    ballSpeedX: 7

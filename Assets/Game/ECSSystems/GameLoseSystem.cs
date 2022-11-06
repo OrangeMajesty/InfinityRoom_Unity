@@ -1,6 +1,7 @@
 ﻿using Game.ECSComponents;
 using Game.Models;
 using Leopotam.Ecs;
+using UnityEngine;
 
 namespace Game.ECSSystems
 {
@@ -14,6 +15,7 @@ namespace Game.ECSSystems
         {
             if (!_ballColisionEvent.IsEmpty())
             {
+                Debug.Log($"Game end. MaxTime {Modeler.ModelGame.playingTime}");
                 Modeler.ModelPrefs.maxTimePlayed = Modeler.ModelGame.playingTime;
             }
         }

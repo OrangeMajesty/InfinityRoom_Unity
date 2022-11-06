@@ -1,4 +1,5 @@
-﻿using Game.ECSComponents;
+﻿using System;
+using Game.ECSComponents;
 using Game.Startup;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -9,9 +10,15 @@ namespace Game.Components
     {
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log("Collision");
+
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("Collision trigger ");
             var entity = EcsStartup.World.NewEntity();
             entity.Get<BallCollisionEvent>();
-
         }
     }
 }
