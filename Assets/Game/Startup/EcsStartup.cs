@@ -15,6 +15,8 @@ namespace Game.Startup
             Systems = new EcsSystems(World);
             Systems
                 .Add(new SpawnBallSystem())
+                .Add(new BallMoveSystem(), BallMoveSystem.Name)
+                .Add(new WorldMoveSystem(), WorldMoveSystem.Name)
                 .Add(new DestroyerWallSystem(), DestroyerWallSystem.Name)
                 .Add(new SpawnWallSystem(), SpawnWallSystem.Name)
                 .Init();

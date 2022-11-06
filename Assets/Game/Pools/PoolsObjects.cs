@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game.Models;
 using Game.Types;
 using UnityEngine;
 
@@ -12,9 +13,15 @@ namespace Game.Pools
         [SerializeField, ArrayByEnum(typeof(PoolObjectType))]
         private PoolPrefabs[] _prefabs;
 
+        private Transform rootTransform;
+
         public void Init()
         {
             instance = this;
+            
+            rootTransform = Modeler.ModelWorld.WorldGameObject == null
+                ? transform
+                : Modeler.ModelWorld.WorldGameObject.transform;
             InitPool();
         }
 
@@ -27,7 +34,7 @@ namespace Game.Pools
                 _objects.Add((PoolObjectType) i, new List<PoolObject>(_prefabs[i].count));
                 for (int o = 0; o < _prefabs[i].count; o++)
                 {
-                    PoolObject poolObject = Instantiate(_prefabs[i].prefab, transform);
+                    PoolObject poolObject = Instantiate(_prefabs[i].prefab, rootTransform);
                     poolObject.gameObject.SetActive(false);
                     
                     _objects[(PoolObjectType) i].Add(poolObject);
@@ -46,7 +53,7 @@ namespace Game.Pools
                 }
             }
             
-            PoolObject poolObject = Instantiate(_prefabs[(int) type].prefab, transform);
+            PoolObject poolObject = Instantiate(_prefabs[(int) type].prefab, rootTransform);
             _objects[type].Add(poolObject);
             return poolObject;
         }

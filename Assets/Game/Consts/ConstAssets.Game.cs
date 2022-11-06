@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Consts
 {
@@ -13,7 +14,9 @@ namespace Game.Consts
             public Vector2 wallDistance;
             [Tooltip("Спавн преграды каждые n клеток (1 клетка = 1 unit)")]
             public int distanceBorderSpawn;
-            [Tooltip("Скорость мяча по оси x")]
+            [Tooltip("Начальная скорость мяча по оси Y")]
+            public float ballSpeedY;
+            [Tooltip("Начальная скорость мяча по оси X")]
             public float ballSpeedX;
         }
     }

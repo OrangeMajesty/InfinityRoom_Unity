@@ -41,7 +41,7 @@ namespace Game.ECSSystems
                 var wallEntity = EcsStartup.World.NewEntity();
                 wallEntity.Get<WallTag>().wall = wall;
 
-                wall.transform.position = new Vector3(spawnComponent.x, spawnComponent.y, 0);
+                wall.transform.localPosition = new Vector3(spawnComponent.x, spawnComponent.y, 0);
                 _wallSpawnCmd.GetEntity(cmd).Del<WallSpawnCmd>();
             }
 
@@ -52,7 +52,7 @@ namespace Game.ECSSystems
             }
         }
 
-        private void CreateWall()
+        private void CreateWall(float x = 0, float y = 0)
         {
             EcsUtil.Get(new WallSpawnCmd
             {
@@ -62,7 +62,7 @@ namespace Game.ECSSystems
             
             this.y = -this.y;
             if (this.y > 0)
-                this.x++;
+                this.x+= 1;
         }
     }
 }

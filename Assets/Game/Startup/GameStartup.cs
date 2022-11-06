@@ -16,14 +16,18 @@ namespace Game.Startup
         [SerializeField]
         private Const _const;
         [SerializeField]
+        private WorldStartup _worldStartup;
+        [SerializeField]
         private EcsStartup _ecsStartup;
         
         private void Start()
         {
-            Modeler.Init();
+            _worldStartup.Init();
             _pools.Init();
             _const.Init();
             _data.Init();
+            Modeler.Init();
+
             _ecsStartup.Init();
         }
     }
