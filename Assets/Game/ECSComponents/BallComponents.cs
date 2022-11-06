@@ -9,4 +9,6 @@ namespace Game.ECSComponents
     {
         public GameObject ball;
     }
+    
+    public struct BallCollisionEvent {}
 }

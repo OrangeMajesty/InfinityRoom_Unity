@@ -30,5 +30,10 @@ namespace Game.Startup
 
             _ecsStartup.Init();
         }
+
+        private void GameRestart()
+        {
+            // Modeler.Save();
+        }
     }
 }
