@@ -33,13 +33,14 @@ namespace Game.ECSSystems
                 if (Modeler.ModelPrefs.maxTimePlayed < Modeler.ModelGame.playingTime)
                     Modeler.ModelPrefs.maxTimePlayed = Modeler.ModelGame.playingTime;
 
-                Modeler.ModelGame.playingTime = 0;
                 Modeler.ModelPrefs.gameCount++;
                 Modeler.ModelPrefs.Save();
 
                 // Показ окна проигрыша.
                 UIStartup.LosePopup.Show();
                 
+                Modeler.ModelGame.playingTime = 0;
+
                 // Возвращение всех объектов в пулл.
                 PoolsObjects.instance.ReleaseAllObjects();
 
