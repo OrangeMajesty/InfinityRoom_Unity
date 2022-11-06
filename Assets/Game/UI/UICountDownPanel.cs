@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Game.UI
 {
+    /// <summary>
+    /// Компонент панели обратного отсчета перед стартом.
+    /// </summary>
     public class UICountDownPanel: UIPopup
     {
         [SerializeField]

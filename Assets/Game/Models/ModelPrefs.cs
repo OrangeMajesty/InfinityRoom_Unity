@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Game.Models
 {
+    /// <summary>
+    /// Модель хранит и управляет данными PlayerPrefs.
+    /// Используется для хранения лучшего игрового времени на сложности.
+    /// </summary>
     [Serializable]
     public class ModelPrefs
     {

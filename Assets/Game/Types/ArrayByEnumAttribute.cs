@@ -5,6 +5,11 @@ using System.Linq;
 using UnityEditor;
 #endif
 
+
+/// <summary>
+/// Кастомный атрибут для редактора.
+/// Выводит перечисления в виде массива.
+/// </summary>
 public class ArrayByEnumAttribute : PropertyAttribute
 {
     public readonly string[] Names;

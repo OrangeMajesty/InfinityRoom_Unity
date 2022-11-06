@@ -2,6 +2,9 @@
 
 namespace Game.UI
 {
+    /// <summary>
+    /// Базовый класс UI окон.
+    /// </summary>
     public class UIPopup: MonoBehaviour
     {
         [SerializeField]

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Game.UI
 {
+    /// <summary>
+    /// Компонент отрисовывает текущее время на игровой сцене во время игры.
+    /// </summary>
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class PlayingTimePrintComponent: MonoBehaviour
     {

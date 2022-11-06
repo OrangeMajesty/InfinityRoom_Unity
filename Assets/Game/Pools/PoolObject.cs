@@ -1,8 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Game.Pools
 {
+    /// <summary>
+    /// Объект пулла.
+    /// Базовый класс.
+    /// </summary>
     public class PoolObject: MonoBehaviour
     {
         public void ReturnToPool()

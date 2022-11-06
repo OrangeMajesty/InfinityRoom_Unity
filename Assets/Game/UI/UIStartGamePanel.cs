@@ -6,6 +6,10 @@ using Game.Utils;
 
 namespace Game.UI
 {
+    /// <summary>
+    /// Компонент отрисовки панели с выбором сложности.
+    /// После выбора запускает игру.
+    /// </summary>
     public class UIStartGamePanel: UIPopup
     {
         public void OnSelectedLowDifficultClick()

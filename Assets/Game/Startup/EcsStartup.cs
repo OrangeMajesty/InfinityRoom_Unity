@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Game.Startup
 {
+    /// <summary>
+    /// Компонент управляющий миром ECS.
+    /// </summary>
     public class EcsStartup: MonoBehaviour
     {
         public static EcsWorld World { get; private set; }

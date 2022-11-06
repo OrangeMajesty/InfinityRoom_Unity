@@ -9,6 +9,9 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
+    /// <summary>
+    /// Система спавна преград.
+    /// </summary>
     public class SpawnBordersSystems: IEcsInitSystem, IEcsRunSystem
     {
         public const string Name = "SpawnBordersSystems";
@@ -31,25 +34,28 @@ namespace Game.ECSSystems
                 return;
             }
 
-            // Пропускаем генерацию если уже сгенерирован 1 блок на дистанции
+            // Пропускаем генерацию если последний сгенерированный блок слишком близко.
             if ((-_worldTransform.position.x + Const.Game.wallDistance.x) - _lastSpawnPositionX < 1)
                 return;
             
             if (-_worldTransform.position.x % Const.Game.distanceBorderSpawn < 0.05f)
             {
+                // Получение объекта.
                 var border = PoolsObjects.instance.GetObject(PoolObjectType.Border);
                 border.gameObject.SetActive(true);
 
-                // Убираем наслаивание препятствий на стены
+                // Убираем наслаивание препятствий на стены.
                 float borderDistanceY = Const.Game.wallDistance.y - 1;
+                
+                // Определяем координаты спавна.
                 float targetSpawnX = -_worldTransform.position.x + Const.Game.wallDistance.x;
                 float targetSpawnY = Random.Range(borderDistanceY, -borderDistanceY);
                 Vector3 targetSpawn = new Vector3(targetSpawnX, targetSpawnY, 0);
                 border.transform.localPosition = targetSpawn;
                 
+                // Вешаем тег проверки объекта на выход за границы игры.
                 var wallEntity = EcsStartup.World.NewEntity();
                 wallEntity.Get<ObjectCheckBoundTag>().gameObject = border;
-                wallEntity.Get<BorderTag>().border = border;
 
                 _lastSpawnPositionX = targetSpawnX;
             }

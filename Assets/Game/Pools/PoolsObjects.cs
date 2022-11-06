@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Game.Pools
 {
+    /// <summary>
+    /// Класс управляющий списком пуллов.
+    /// </summary>
     public class PoolsObjects: MonoBehaviour
     {
         public static PoolsObjects instance;
@@ -19,12 +22,16 @@ namespace Game.Pools
         {
             instance = this;
             
+            // Определение родителя.
             rootTransform = Modeler.ModelWorld.WorldGameObject == null
                 ? transform
                 : Modeler.ModelWorld.WorldGameObject.transform;
             InitPool();
         }
 
+        /// <summary>
+        /// Создание объектов м заполнение словаря.
+        /// </summary>
         private void InitPool()
         {
             _objects = new Dictionary<PoolObjectType, List<PoolObject>>(_prefabs.Length);
@@ -43,6 +50,13 @@ namespace Game.Pools
             }
         }
 
+        /// <summary>
+        /// Получение объекта из пулла.
+        /// СОздаст объект если в пулле нет свободного объекта.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        
         public PoolObject GetObject(PoolObjectType type)
         {
             for (int i = 0; i < _objects[type].Count; i++)
@@ -60,6 +74,9 @@ namespace Game.Pools
             return poolObject;
         }
 
+        /// <summary>
+        /// Освобождает все объекты всех пуллов.
+        /// </summary>
         public void ReleaseAllObjects()
         {
             foreach (var pollObjects in _objects.Values)
@@ -70,11 +87,6 @@ namespace Game.Pools
                     poolObject.ReturnToPool();
                 }
             }
-        }
-
-        public void ReleaseObject(PoolObject poolObject)
-        {
-            poolObject.ReturnToPool();
         }
     }
 }

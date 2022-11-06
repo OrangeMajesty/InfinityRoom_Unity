@@ -6,6 +6,10 @@ using UnityEngine;
 
 namespace Game.UI
 {
+    /// <summary>
+    /// Компонент вывода статистики последней игры.
+    /// Умеет перезапускать игру.
+    /// </summary>
     public class UIGameLosePopup: UIPopup
     {
         [SerializeField]

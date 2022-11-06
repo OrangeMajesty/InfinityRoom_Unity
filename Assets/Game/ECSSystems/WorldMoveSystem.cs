@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
+    /// <summary>
+    /// Система перемещения игрового мира по горизонтали.
+    /// </summary>
     public class WorldMoveSystem: IEcsInitSystem, IEcsRunSystem
     {
         public const string Name = "WorldMoveSystem";
@@ -23,6 +26,7 @@ namespace Game.ECSSystems
             if (_gamePlayingTag.IsEmpty())
                 return;
             
+            // Ускорение движения мира по горизонтали каждые n секунд.
             var addSpeed = Const.Game.accelerationBall *
                            (int) (Modeler.ModelGame.playingTime / Const.Game.accelerationAfterNSec);
             

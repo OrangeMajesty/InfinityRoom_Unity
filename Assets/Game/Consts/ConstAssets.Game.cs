@@ -3,12 +3,15 @@ using UnityEngine;
 
 namespace Game.Consts
 {
+    /// <summary>
+    /// Настройки уровня.
+    /// </summary>
     public partial class ConstAssets
     {
         [Serializable]
         public class Game
         {
-            [Header("Настройка уровня")]
+            [Header("Настройки уровня")]
             [Tooltip("Отдаленность стен от середины сцены")]
             public Vector2 wallDistance;
             [Tooltip("Спавн преграды каждые n клеток (1 клетка = 1 unit)")]

@@ -168,13 +168,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabs:
-  - prefab: {fileID: 3468104045679284039, guid: be674a4d46cdabf42bb629d554c50596, type: 3}
+  - prefab: {fileID: 986315948699352262, guid: be674a4d46cdabf42bb629d554c50596, type: 3}
     count: 50
     withoutParent: 0
-  - prefab: {fileID: 581731725777137908, guid: 63942bb0b3af0ca4cbbc6b98d95536d3, type: 3}
+  - prefab: {fileID: -8619789521150784786, guid: 63942bb0b3af0ca4cbbc6b98d95536d3, type: 3}
     count: 3
     withoutParent: 0
-  - prefab: {fileID: 1737735659161213706, guid: c5e7759b7d8a76d40941c1ca78249110, type: 3}
+  - prefab: {fileID: 3604246060284514699, guid: c5e7759b7d8a76d40941c1ca78249110, type: 3}
     count: 1
     withoutParent: 1
 --- !u!1 &81078969
@@ -721,7 +721,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 800}
+  m_SizeDelta: {x: 800, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &144290866
 MonoBehaviour:
@@ -1772,7 +1772,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u043B\u043E\u0436\u0430\u043D\u0430\u044F"
+  m_text: "\u0421\u043B\u043E\u0436\u043D\u0430\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2878,7 +2878,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u043E\u043C\u0430\u043B\u044C\u043D\u0430\u044F"
+  m_text: "\u041D\u043E\u0440\u043C\u0430\u043B\u044C\u043D\u0430\u044F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

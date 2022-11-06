@@ -6,6 +6,9 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
+    /// <summary>
+    /// Система управления текущим игровым временем.
+    /// </summary>
     public class PlayingTimeSystem: IEcsRunSystem
     {
         public const string Name = "PlayingTimeSystem";
@@ -14,6 +17,7 @@ namespace Game.ECSSystems
         private EcsFilter<GameStartEvent> _gameStartEvent;
         private EcsFilter<GamePlayingTag> _gamePlayingTag;
 
+        // Смещение времени относительно окончания обратного отсчета.
         private float _startTimeOffset;
         
         public void Run()

@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Game.Consts
 {
+    /// <summary>
+    /// Предустановленные игровые данные.
+    /// Ассеты с данными выбираются в зависимости от сложности игры.
+    /// </summary>
     public class Const: MonoBehaviour
     {
         [SerializeField, ArrayByEnum(typeof(GameDifficult))]

@@ -5,6 +5,10 @@ using UnityEngine;
 
 namespace Game.Startup
 {
+    /// <summary>
+    /// Точка входа в игру.
+    /// Компонент управляет игрой.
+    /// </summary>
     public class GameStartup: MonoBehaviour
     {
         [Header("Components")]

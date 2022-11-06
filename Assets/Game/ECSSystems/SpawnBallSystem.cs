@@ -7,6 +7,9 @@ using UnityEngine;
 
 namespace Game.ECSSystems
 {
+    /// <summary>
+    /// Система спавна мяча.
+    /// </summary>
     public class SpawnBallSystem: IEcsRunSystem
     {
         public const string Name = "SpawnBallSystem";
@@ -19,9 +22,9 @@ namespace Game.ECSSystems
             if (_spawnBallCmd.IsEmpty())
                 return;
             
+            // Получение объекта из пулла.
             GameObject ball = PoolsObjects.instance.GetObject(PoolObjectType.Ball).gameObject;
             EcsEntity ballSpawnedEvent = EcsStartup.World.NewEntity();
-            ballSpawnedEvent.Get<BallSpawnedEvent>();
             ballSpawnedEvent.Get<BallTag>().ball = ball;
         }
     }

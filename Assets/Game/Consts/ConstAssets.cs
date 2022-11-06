@@ -2,7 +2,10 @@
 
 namespace Game.Consts
 {
-    [CreateAssetMenu(menuName = "Create game consts")]
+    /// <summary>
+    /// Ассет с игровыми данными.
+    /// </summary>
+    [CreateAssetMenu(menuName = "Create Game Difficult")]
     public partial class ConstAssets: ScriptableObject
     {
         public Game _game;

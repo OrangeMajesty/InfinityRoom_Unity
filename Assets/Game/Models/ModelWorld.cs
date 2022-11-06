@@ -4,6 +4,10 @@ using UnityEngine;
 
 namespace Game.Models
 {
+    /// <summary>
+    /// Модель мира.
+    /// Хранит скорость и ссылку на объект.
+    /// </summary>
     [Serializable]
     public class ModelWorld
     {

@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Game.Startup
 {
+    /// <summary>
+    /// Компонент хранит ссылки на UI окна.
+    /// </summary>
     public class UIStartup: MonoBehaviour
     {
         [SerializeField]
