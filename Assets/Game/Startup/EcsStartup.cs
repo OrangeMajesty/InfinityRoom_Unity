@@ -18,8 +18,9 @@ namespace Game.Startup
                 .Add(new GameLoseSystem(), GameLoseSystem.Name)
                 .Add(new BallMoveSystem(), BallMoveSystem.Name)
                 .Add(new WorldMoveSystem(), WorldMoveSystem.Name)
-                .Add(new DestroyerWallSystem(), DestroyerWallSystem.Name)
+                .Add(new DisableObjectOutOfBounds(), DisableObjectOutOfBounds.Name)
                 .Add(new SpawnWallSystem(), SpawnWallSystem.Name)
+                .Add(new SpawnBordersSystems(), SpawnBordersSystems.Name)
                 .Init();
         }
         

@@ -39,6 +39,7 @@ namespace Game.ECSSystems
                 var wall = PoolsObjects.instance.GetObject(PoolObjectType.Wall);
 
                 var wallEntity = EcsStartup.World.NewEntity();
+                wallEntity.Get<ObjectCheckBoundTag>().gameObject = wall;
                 wallEntity.Get<WallTag>().wall = wall;
 
                 wall.transform.localPosition = new Vector3(spawnComponent.x, spawnComponent.y, 0);
