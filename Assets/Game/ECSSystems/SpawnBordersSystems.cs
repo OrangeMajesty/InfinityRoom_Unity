@@ -37,8 +37,9 @@ namespace Game.ECSSystems
             // Пропускаем генерацию если последний сгенерированный блок слишком близко.
             if ((-_worldTransform.position.x + Const.Game.wallDistance.x) - _lastSpawnPositionX < 1)
                 return;
-            
-            if (-_worldTransform.position.x % Const.Game.distanceBorderSpawn < 0.05f)
+
+            Debug.Log($"SpawnBordersSystems {-_worldTransform.position.x} {Const.Game.distanceBorderSpawn} {-_worldTransform.position.x % Const.Game.distanceBorderSpawn}");
+            if (-_worldTransform.position.x % Const.Game.distanceBorderSpawn < 1f)
             {
                 // Получение объекта.
                 var border = PoolsObjects.instance.GetObject(PoolObjectType.Border);

@@ -8,7 +8,7 @@ namespace Game.Startup
     /// </summary>
     public class WorldStartup: MonoBehaviour
     {
-        public void Init()
+        public void OnceInit()
         {
             Modeler.ModelWorld.WorldGameObject = gameObject;
         }

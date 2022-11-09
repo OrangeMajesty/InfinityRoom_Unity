@@ -50,7 +50,7 @@ namespace Game.ECSSystems
 
                 // Установка локальной позиции в объекте мира.
                 wall.transform.localPosition = new Vector3(spawnComponent.x, spawnComponent.y, 0);
-                _wallSpawnCmd.GetEntity(cmd).Del<WallSpawnCmd>();
+                _wallSpawnCmd.GetEntity(cmd).Destroy();
             }
 
             // Пересоздание стен вышедших за границу.

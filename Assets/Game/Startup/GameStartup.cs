@@ -1,6 +1,8 @@
-﻿using Game.Consts;
+﻿using System;
+using Game.Consts;
 using Game.Models;
 using Game.Pools;
+using Game.Services.Metrics;
 using UnityEngine;
 
 namespace Game.Startup
@@ -22,20 +24,28 @@ namespace Game.Startup
         private EcsStartup _ecsStartup;
         [SerializeField]
         private UIStartup _uiStartup;
+        [SerializeField]
+        private MetricStartup _metricStartup;
 
         private static GameStartup _instance;
         
         private void Awake()
         {
             _instance = this;
+        }
+
+        private void Start()
+        {
+            _instance._metricStartup.OnceInit();
+            _instance._worldStartup.OnceInit();
+            _instance._pools.OnceInit();
+            
             GameRestart();
         }
 
         public static void GameRestart()
         {
             _instance._uiStartup.Init();
-            _instance._worldStartup.Init();
-            _instance._pools.Init();
             _instance._const.Init();
             Modeler.Init();
 

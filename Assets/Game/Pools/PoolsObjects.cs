@@ -18,7 +18,8 @@ namespace Game.Pools
 
         private Transform rootTransform;
 
-        public void Init()
+        
+        public void OnceInit()
         {
             instance = this;
             
@@ -26,13 +27,14 @@ namespace Game.Pools
             rootTransform = Modeler.ModelWorld.WorldGameObject == null
                 ? transform
                 : Modeler.ModelWorld.WorldGameObject.transform;
-            InitPool();
+
+            BuildPools();
         }
 
         /// <summary>
         /// Создание объектов м заполнение словаря.
         /// </summary>
-        private void InitPool()
+        private void BuildPools()
         {
             _objects = new Dictionary<PoolObjectType, List<PoolObject>>(_prefabs.Length);
             
@@ -61,7 +63,7 @@ namespace Game.Pools
         {
             for (int i = 0; i < _objects[type].Count; i++)
             {
-                if (!_objects[type][i].isActiveAndEnabled)
+                if (!_objects[type][i].gameObject.activeInHierarchy)
                 {
                     _objects[type][i].gameObject.SetActive(true);
                     return _objects[type][i];

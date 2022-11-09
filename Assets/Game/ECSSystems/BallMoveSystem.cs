@@ -31,7 +31,7 @@ namespace Game.ECSSystems
             foreach (var idx in _ballFilter)
             {
                 // Определение направления движения (вверх, вниз)
-                _directionY = Input.GetKey(KeyCode.UpArrow) ? 1 : -1;
+                _directionY = Input.GetKey(KeyCode.UpArrow) || Input.touchCount > 0 ? 1 : -1;
                 // Перемещение мяча по вертикали
                 _ballFilter.Get1(idx).ball.transform.Translate(0, _speedY * _directionY * Time.deltaTime, 0);
             }
